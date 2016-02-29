@@ -1,4 +1,6 @@
 <div class= "container" id="search-form">
+    <%= form_tag(root_path, :method => "get") do %>
+
   <row>
     <div class="col-md-2">
     <h4>From Airport</h1>
@@ -25,7 +27,9 @@
   </row>
   <row>
     <div class="col-md-1 ">
-    <button class="btn btn-default btn-lg">Search</button>
+    <%= submit_tag "Search", class: "btn btn-default btn-lg" %>
+
     </div>
   </row>
+  <% end %>
 </div>
