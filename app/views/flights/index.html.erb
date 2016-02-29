@@ -2,49 +2,25 @@
   <row>
     <div class="col-md-2">
     <h4>From Airport</h1>
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+      <%= select_tag(:from_airport, options_for_select(@airports), class: "form-control" )%>
     </div>
   </row>
   <row>
   <div class="col-md-2 ">
     <h4>To Airport</h1>
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+      <%= select_tag(:to_airport, options_for_select(@airports), class: "form-control" )%>
     </div>
   </row>
   <row>
   <div class="col-md-2 ">
-    <h4>Num of passangers</h1>
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+    <h4>Passangers</h1>
+    <%= select_tag(:num_tickets, options_for_select(@num), class: "form-control") %>
     </div>
   </row>
   <row>
   <div class="col-md-2 ">
     <h4>Date</h1>
-      <select class="form-control">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-      </select>
+    <%= select_tag(:date, options_for_select(@dates), class: "form-control") %>
     </div>
   </row>
   <row>
