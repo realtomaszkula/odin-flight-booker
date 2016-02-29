@@ -1,0 +1,8 @@
+<% @results.each do |flight| %>
+  <div class="radio">
+    <label>
+      <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+       <%= date = flight.departure_date.strftime('%b %e, %l:%M %p') %>
+    </label>
+  </div>
+<% end %>

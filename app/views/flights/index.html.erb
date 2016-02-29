@@ -1,17 +1,13 @@
 <%= render 'search_form' %>
-
 <hr>
 
-<div class= "container">
-  <row>
-    <div class="col-md-2">
-    <h3>Results</h3>
-      <div class="radio">
-        <label>
-          <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
-          <span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Flight 1
-        </label>
+<% if @search_query %>
+  <div class= "container">
+    <row>
+      <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Results</h3>
+      <%= render 'results' %>
       </div>
-      </div>
-  </row>
-</div>
+    </row>
+  </div>
+<% end %>
