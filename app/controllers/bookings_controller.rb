@@ -13,6 +13,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @flight = Flight.find_by(id: params[:booking][:flight_id])
     @booking = Booking.new
     @booking.flight_id = params[:booking][:flight_id]
     build_passengers_create
@@ -21,6 +22,7 @@ class BookingsController < ApplicationController
       redirect_to @booking
       flash[:info] = "Flight booked!"
     else
+      flash.now[:danger] = "Enter name / email!"
       render :new
     end
   end
