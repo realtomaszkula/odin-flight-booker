@@ -2,7 +2,7 @@
   <% @results.each do |flight| %>
     <div class="radio">
         <%= f.label :flight_id do %>
-           <%= f.radio_button :flight_id, "#{flight.id}"  %>
+           <%= f.radio_button :flight_id, "#{flight.id}" %>
               Start: <%= flight.start_id %>
               Finish: <%= flight.finish_id %>
               <%= date = flight.departure_date.strftime('%b %e, %l:%M %p') %>
