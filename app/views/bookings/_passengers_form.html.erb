@@ -11,7 +11,7 @@
             <%= passenger_form.email_field :email, class: 'form-control' %>
         <% end %>
 
-
+    <%= f.hidden_field :flight_id, :value => @flight.id %>
     <%= submit_tag "Submit", class: "btn btn-default btn-lg" %>
 
 <% end %>
