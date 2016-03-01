@@ -1,8 +1,8 @@
 <%= form_for(:booking, url: 'bookings/new', :method => "get") do |f| %>
-  <% @results.each do |flight| %>
+  <% @results.each_with_index do |flight, i| %>
     <div class="radio">
         <%= f.label :flight_id do %>
-           <%= f.radio_button :flight_id, "#{flight.id}" %>
+              <%= f.radio_button(:flight_id, flight.id, checked: i == 0) %>
               Start: <%= flight.start_id %>
               Finish: <%= flight.finish_id %>
               <%= date = flight.departure_date.strftime('%b %e, %l:%M %p') %>
