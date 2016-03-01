@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
 
     if @booking.save
       redirect_to @booking
+      flash[:info] = "Flight booked!"
     else
       render :new
     end
