@@ -6,7 +6,7 @@ Airport.create( code: 'PEK')
 Airport.create( code: 'FRA')
 
 
-200.times do
+1000.times do
   airports = [1,2,3,4,5]
 
   airport_from = airports.sample

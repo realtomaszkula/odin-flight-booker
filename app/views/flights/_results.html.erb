@@ -2,6 +2,8 @@
   <div class="radio">
     <label>
       <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
+      Start: <%= flight.start_id %>
+      Finish: <%= flight.finish_id %>
        <%= date = flight.departure_date.strftime('%b %e, %l:%M %p') %>
     </label>
   </div>
