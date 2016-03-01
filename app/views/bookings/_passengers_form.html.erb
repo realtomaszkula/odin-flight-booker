@@ -3,15 +3,14 @@
 
 <%= form_for(@booking) do |f| %>
 
-    <% @passengers.each_with_index do |passenger, i| %>
-        <%= fields_for passenger do |passenger_form|  %>
-            <%= content_tag :h2, "Passenger #{i+1}"  %>
+        <%= f.fields_for :passengers do |passenger_form|  %>
+            <%= content_tag :h2, "Passenger"  %>
             <%= passenger_form.label :name%>
             <%= passenger_form.text_field :name, class: 'form-control' %>
             <%= passenger_form.label :email%>
             <%= passenger_form.email_field :email, class: 'form-control' %>
         <% end %>
-    <% end %>
+
 
     <%= submit_tag "Submit", class: "btn btn-default btn-lg" %>
 

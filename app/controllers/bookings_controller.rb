@@ -1,5 +1,8 @@
 class BookingsController < ApplicationController
 
+  def show
+  end
+
   def new
     @flight = Flight.find_by(id: params[:booking][:flight_id])
     @booking = Booking.new
@@ -7,8 +10,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-
-
+    @booking = Booking.new
+    if @booking.save
+      redirect_to @booking
+    else
+      render :new
+    end
   end
 
 
