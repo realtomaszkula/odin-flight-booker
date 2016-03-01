@@ -1,0 +1,25 @@
+<div class= "container" >
+
+  <% @passengers.each_with_index do |passenger, i| %>
+
+        <div class="row">
+            <h1>Passenger <%= " #{i+1}" %></h1>
+
+            <div class="col-md-2 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Name</div>
+                    <div class="panel-body text-center"><%= passenger.name %></div>
+                </div>
+            </div>
+            <div class="col-md-2 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center">Email</div>
+                    <div class="panel-body text-center"><%= passenger.email %></div>
+                </div>
+            </div>
+        </div>
+
+    <% end %>
+
+
+</div>
