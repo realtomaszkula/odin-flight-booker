@@ -6,6 +6,7 @@ class FlightsController < ApplicationController
     @dates = format_and_map(possible_dates)
 
     @search_query = search_query?
+    @num_tickets = params[:num_tickets]
     search if search_query?
   end
 

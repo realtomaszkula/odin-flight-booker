@@ -1,10 +1,16 @@
-<% @results.each do |flight| %>
-  <div class="radio">
-    <label>
-      <input type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="...">
-      Start: <%= flight.start_id %>
-      Finish: <%= flight.finish_id %>
-       <%= date = flight.departure_date.strftime('%b %e, %l:%M %p') %>
-    </label>
-  </div>
+<%= form_for(:booking, url: 'bookings/new', :method => "get") do |f| %>
+  <% @results.each do |flight| %>
+    <div class="radio">
+        <%= f.label :flight_id do %>
+           <%= f.radio_button :flight_id, "#{flight.id}"  %>
+              Start: <%= flight.start_id %>
+              Finish: <%= flight.finish_id %>
+              <%= date = flight.departure_date.strftime('%b %e, %l:%M %p') %>
+        <% end %>
+    </div>
+  <% end %>
+
+    <%=  f.hidden_field(:num_of_tickets, :value => "#{@num_tickets}")  %>
+    <%= submit_tag "Select", class: "btn btn-default btn-lg" %>
+
 <% end %>
