@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>This is a confirmation email for booking <%= @booking.id %>
+    created at <%= @booking.created_at %></h1>
+    <p>
+      You have successfully booked tickets
+      from <%= @booking.flight.from_airport.code %>
+      to <%= @booking.flight.to_airport.code %>
+     <br>
+     You are schedulded for departure on <%= @booking.flight.departure_date  %>
+    </p>
+    <p>
+      Passengers information:
+      <% @booking.passengers.each do |p| %>
+      <br>
+      Name:<%=  p.name %> <br>
+      Email: <%= p.email %> <br>
+      <% end %>
+    </p>
+    <p>Have a great day and a great trip!</p>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+This is a confirmation email for booking <%= @booking.id %>
+created at <%= @booking.created_at %>
+===============================================
+You have successfully booked tickets
+from <%= @booking.flight.from_airport.code %>
+to <%= @booking.flight.to_airport.code %>
+
+You are schedulded for departure on <%= @booking.flight.departure_date  %>
+
+Passengers information:
+<% @booking.passengers.each %>
+Name:<%=  p.name %>
+Email: <%= p.email %>
+<% end %>
+
+
+Have a great day and a great trip!

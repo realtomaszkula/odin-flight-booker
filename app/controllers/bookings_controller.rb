@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
     build_passengers_create
 
     if @booking.save
+      PassengerMailer.confirmation_email(@booking).deliver_later
       redirect_to @booking
       flash[:info] = "Flight booked!"
     else
